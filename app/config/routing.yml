@@ -1,0 +1,5 @@
+theodo_conference:
+    resource: "@TheodoConferenceBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

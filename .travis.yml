@@ -1,0 +1,16 @@
+---
+
+language: php
+
+php:
+  - 5.5
+
+before_script:
+  - mysql -e 'create database coference;'
+  - cp app/config/parameters.yml.dist app/config/parameters.yml
+  - composer install --prefer-dist
+  - app/console assets:install --symlink
+  - npm install
+
+script:
+  - bin/phpunit -c app
